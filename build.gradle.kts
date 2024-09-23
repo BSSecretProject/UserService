@@ -33,11 +33,18 @@ dependencies {
     implementation ("org.projectlombok:lombok")
     annotationProcessor ("org.projectlombok:lombok")
 
+    implementation("org.mapstruct:mapstruct:1.5.3.Final")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.3.Final")
+
+
     /**
      * Swagger
      */
     implementation("io.springfox:springfox-swagger2:2.9.2")
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
+
+
+    runtimeOnly ("org.postgresql:postgresql")
 
 
 }
