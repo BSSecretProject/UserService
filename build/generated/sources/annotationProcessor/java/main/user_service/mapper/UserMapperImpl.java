@@ -11,6 +11,7 @@ import user_service.entity.User;
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.5.jar, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
+// TODO Интерфейс тут по сути не нужен, это просто утилитный класс, @UtilityClass и методы static
 public class UserMapperImpl implements UserMapper {
 
     @Override

@@ -9,8 +9,12 @@ import user_service.exeptions.DataValidationException;
 
 @Component
 @RequiredArgsConstructor
+// TODO Это можно сделать @UtilityClass и методы сделать статик
 public class UserValidator {
 
+    // TODO Я уверен, что есть какое-то элегантное решение с валидатором пароля, которое можно прикрутить на анотацию спринга
+    // В целом это не плохо, но посмотри, пока проекты учебные, можно делать все как по кайфу))
+    // Вот пример https://stackoverflow.com/questions/65400172/validating-password-and-confirmed-password-spring-boot
     public void validatePassword(String password) {
         if (!password.matches(".*[A-Z].*")) {
             throw new DataValidationException("Your password must contain at least 1 uppercase letter");
@@ -24,6 +28,8 @@ public class UserValidator {
         if (!password.matches(".*[A-Za-z].*")) {  // Проверка на наличие английских букв
             throw new DataValidationException("Password must contain at least 1 English letter");
         }
+
+        // TODO Ради всего святого, ломбок сюда, он легко подключается
         System.out.println("Password validation passed.");
     }
 }

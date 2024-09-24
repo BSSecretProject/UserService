@@ -11,9 +11,12 @@ import user_service.validation.UserValidator;
 @RequiredArgsConstructor
 @Service
 public class UserService {
+    // TODO Переделаешь в утилитный и инстанс объекта не нужно будет создавать
     private final UserValidator userValidator;
+    // TODO Переделаешь в утилитный и инстанс объекта не нужно будет создавать
     private final UserMapper userMapper;
     private final UserRepository userRepository;
+
     public UserDto createUser(UserDto userDto) {
         userValidator.validatePassword(userDto.getPassword());
         User user = userMapper.toUser(userDto);

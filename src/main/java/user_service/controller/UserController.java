@@ -14,7 +14,10 @@ import user_service.service.UserService;
 @RestController
 public class UserController {
     private final UserService userService;
+
     @ApiOperation(value = "Create new user")
+    // TODO Путь вынеси в константу
+    // TODO У тебя эндпоинт создания юзера лежит сейчас на домене. Это не очень информативно. Добавь для UserController'a свой префикс, по типу /users
     @PostMapping("createUser")
     public UserDto createUser(@Valid @RequestBody UserDto userDto) {
         return userService.createUser(userDto);
